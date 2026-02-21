@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F06522;
+  --color-primary-dark: #D4541B;
+  --color-primary-light: #FFF5F0;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F9FAFB;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+  --primary: #F06522;
+  --primary-foreground: #ffffff;
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased selection:bg-orange-100 selection:text-orange-900;
+  }
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-md border border-white/20;
+}
+
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-all duration-300 shadow-lg shadow-orange-500/20 active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-white text-primary font-semibold rounded-full border border-primary/20 hover:bg-primary-light transition-all duration-300 active:scale-95;
+}
